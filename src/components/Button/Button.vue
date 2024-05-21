@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <button type="submit" class="button">Continue</button>
+  <button class="button">Continue</button>
 </template>
 
 <style scoped lang="scss">
@@ -17,8 +17,16 @@
   border-radius: var(--border-radius);
   border: none;
 
+  &__disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
+
   @include hover {
     opacity: 0.8;
   }
+
+
 }
 </style>

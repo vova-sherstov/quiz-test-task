@@ -1,11 +1,14 @@
 <script setup lang="ts">
-
+const props = defineProps({
+  questionNumber: Number,
+  totalQuestions: Number,
+});
 </script>
 
 <template>
   <header class="header">
     <div class="header__inner container">
-      <button class="header__btn icon-btn">
+      <button class="header__btn icon-btn" @click="$emit('setPrevPage')">
         <img
           src="../../assets/icons/arrow-left.svg"
           alt="left arrow"
@@ -30,7 +33,7 @@
         <span class="visually-hidden">Home</span>
       </a>
 
-      <span class="header__steps">1 / 26</span>
+      <span class="header__steps">{{ `${questionNumber} / ${totalQuestions}` }}</span>
     </div>
   </header>
 </template>
